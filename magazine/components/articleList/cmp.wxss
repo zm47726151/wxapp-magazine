@@ -1,0 +1,47 @@
+/* components/articleList/cmp.wxss */
+.container{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 25rpx;
+    min-height: 100rpx;
+}
+
+.article{
+    display: block;
+    margin-top: 30rpx;
+}
+
+.loading .box{
+    position: relative;
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 50%;
+    background-color: rgb(114, 114, 114);
+    left: calc(50% - 40rpx);
+    top: 16rpx;
+}
+.loading .box .small{
+    position: absolute;
+    left: calc(50% - 15rpx);
+    top: calc(50% - 15rpx);
+    height: 30rpx;
+    width: 30rpx;
+    border-radius: 50%;
+    background-color: #000;
+    animation: run 1s alternate infinite;
+}
+@keyframes run {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1.5);
+    }
+}
+
+.reminder{
+    height: 60rpx;
+    width: 100%;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 40rpx;
+}

@@ -1,0 +1,11 @@
+<scroll-view scroll-y="{{true}}" style="height: 800px;" class="container" bindscrolltolower='scrolltolower'>
+    <h-article class="article" wx:for="{{articleList}}"
+     article-detail="{{item}}"
+     wx:key="{{artId}}"></h-article>
+     <view hidden="{{!loading}}" class="loading">
+        <view class="box">
+            <view class="small"></view>
+        </view>
+     </view>
+     <view hidden="{{!isAll}}" class="reminder">已经到底了...</view>
+</scroll-view>

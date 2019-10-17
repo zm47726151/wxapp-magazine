@@ -1,0 +1,17 @@
+
+<h-nav class="nav" catch:nav="onNav" />
+
+<h-recommend recommend="{{recommend}}" magazine-id="{{magazineId}}" class="recommend" catch:tap="onNav"/>
+
+<h-tagList mark-list="{{markList}}">
+    <h-add slot="before" class="add" wx:if="{{magazineId == 0}}"/>
+    <view slot="after" class="to-catalog" catch:tap="onCatalog" wx:if="{{magazineId === 0}}">•••</view>
+</h-tagList>
+
+<h-articleList  id="test"
+                article-list="{{articleList}}"
+                magazineId="{{magazineId}}"/>
+
+<view class="loading-container" wx:if="{{loading}}">
+	<h-loading class="loading"/>
+</view>

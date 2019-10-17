@@ -1,0 +1,50 @@
+<!-- 文章组件 -->
+
+<view class="container">
+    <view class="mark-container">
+        <image class="avatar" src="{{articleDetail.mark.avatar}}" />
+        <text class="text">{{articleDetail.mark.people}}等{{articleDetail.mark.count}}人马克了</text>
+    </view>
+
+    <view >
+        <h-bigimg wx:if="{{articleDetail.type == 0}}"
+                  img-src="{{articleDetail.imgArray[0]}}"
+                  main-title="{{articleDetail.mainTitle}}"/>
+
+        <h-nineimg wx:elif="{{articleDetail.type === 1}}"
+                   img-arr="{{articleDetail.imgArray}}"
+                   main-title="{{articleDetail.mainTitle}}"/>
+
+        <h-imgtext wx:elif="{{articleDetail.type === 2}}"
+                   main-title="{{articleDetail.mainTitle}}"
+                   sub-head="{{articleDetail.subHead}}"
+                   img-src="{{articleDetail.imgArray[0]}}"/>
+
+        <h-video wx:elif="{{articleDetail.type === 3}}"
+                 main-title="{{articleDetail.mainTitle}}"
+                 img-src="{{articleDetail.video.src}}"
+                 duration="{{articleDetail.video.duration}}"
+                 poster-src="{{articleDetail.video.poster}}"
+                 video-id="{{articleDetail.videoId}}"/>
+
+        <h-puretext wx:else
+                    main-title="{{articleDetail.mainTitle}}"
+                    sub-head="{{articleDetail.subHead}}"/>
+        
+    </view>
+
+    <view class="control-container">
+        <view >
+            <h-tag tag-name="{{articleDetail.tag}}" tag-id="{{articleDetail.tagId}}"/>
+        </view>
+        <view class="control-box">
+            <h-more class="box" tag-name="{{articleDetail.tag}}"/>
+            <h-imgBtn open-type="share" class="box img-btn">
+                <image src="/images/mark/relay.png" slot="img"/>
+            </h-imgBtn>
+            <h-like like="{{likeStatus}}" class="box" catch:like="onLike"/>
+        </view>
+
+    </view>
+
+</view>

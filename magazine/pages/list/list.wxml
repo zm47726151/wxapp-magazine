@@ -1,0 +1,119 @@
+<!--pages/list/list.wxml-->
+<text>pages/list/list.wxml</text>
+<view class="container">
+    <view class="recommend-container">
+        
+        <view class="recommend-article">
+            <text class='date'>{{recommend.date}}</text>
+            <text class='recommend-title'>{{recommend.title}}</text>
+            <image mode="widthFix" class="recommend-cover" src="{{recommend.imgSrc}}" />
+        </view>
+        <view class="recommend-box">
+            <text>+</text>
+            <text bindtap='goTo' data-typeId="{{item.typeId}}" wx:for="{{markType}}" wx:key="{{item.typeId}}">{{item.type}}</text>
+            <text>❶❶❶</text>
+        </view>
+    </view>
+
+    <view class="recommend-list-container">
+        <view class="per-article" wx:for="{{articleList}}" wx:key="item.typeId">
+            <view class="article-head">
+                <image src="{{item.markPeopleAvatar}}" />
+                <text>{{item.markPeople}}</text>
+                <text>等</text>
+                <text>{{item.markCount}}</text>
+                <text>人Mark了</text>
+            </view>
+            <view class="article-cover">
+                <image mode="widthFix" src="{{item.articleImgSrc}}" />
+            </view>
+            <view class="article-title">
+                <text>{{item.articleTitle}}</text>
+            </view>
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>{{item.articleType}}</text>
+                </view>
+                <view class="article-handle">
+                    <view bindtap='showAction'>
+                        <image src="/image/list/article/icon/Icon_more.png" />
+                    </view>
+                    <view>
+                        <button class="shareBtn" open-type="share">
+                            <image src="/image/icon/Icon_relay.png" />
+                        </button>
+                    </view>
+                    <view>
+                        <image bindtap='islike' data-articleIndex="{{index}}" wx:if="{{isLike[index]}}" src="/image/icon/Icon_circle.png" />
+                        <image bindtap='islike' data-articleIndex="{{index}}" wx:else src="/image/icon/Icon_circle_fill.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        
+        <!-- <view class="per-article">
+            <view class="article-head">
+                <image src="/img/胡歌.jpg" />
+                <text>neffy</text>
+                <text>等</text>
+                <text>96</text>
+                <text>人Mark了</text>
+            </view>
+            <view class="article-cover">
+                <image mode="widthFix" src="/image/list/article/1.png" />
+            </view>
+            <view class="article-title">
+                <text>赛格打个的Aug加工地阿哥阿达回单卡搭把手搭</text>
+            </view>
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image src="/image/list/article/icon/Icon_more.png" />
+                    </view>
+                    <view>
+                        <image src="/image/icon/Icon_relay.png" />
+                    </view>
+                    <view>
+                        <image src="/image/icon/Icon_circle.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        
+        <view class="per-article">
+            <view class="article-head">
+                <image src="/img/胡歌.jpg" />
+                <text>neffy</text>
+                <text>等</text>
+                <text>96</text>
+                <text>人Mark了</text>
+            </view>
+            <view class="article-cover">
+                <image mode="widthFix" src="/image/list/article/1.png" />
+            </view>
+            <view class="article-title">
+                <text>赛格打个的Aug加工地阿哥阿达回单卡搭把手搭</text>
+            </view>
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image src="/image/list/article/icon/Icon_more.png" />
+                    </view>
+                    <view>
+                        <image src="/image/icon/Icon_relay.png" />
+                    </view>
+                    <view>
+                        <image src="/image/icon/Icon_circle.png" />
+                    </view>
+                </view>
+            </view>
+        </view> -->
+      
+    </view>
+</view>

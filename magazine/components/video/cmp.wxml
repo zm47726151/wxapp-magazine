@@ -1,0 +1,17 @@
+<view class="container">
+    <view>
+        <video bindended="onend" id="{{videoId}}" hidden="{{showPoster}}" class="video" src="{{videoSrc}}" />
+        <view hidden="{{!showPoster}}" class="poster-container">
+            <image class="poster" src="{{posterSrc}}" />
+            <view class="play" catch:tap="oncontrol">
+                <image class="controler" src="./play.png" />
+                <text class="text">{{duration}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="main-title">
+        <text>{{mainTitle}}</text>
+    </view>
+    <view catch:tap="oncontrol" hidden="{{showPoster}}" class="mask"></view>
+</view>

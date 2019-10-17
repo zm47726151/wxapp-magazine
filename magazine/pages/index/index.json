@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+      "h-articleList": "/components/articleList/cmp",
+      "h-recommend": "/components/recommend/cmp",
+      "h-nav": "/components/nav/cmp",
+      "h-loading": "/components/loading/cmp",
+      "h-tagList": "/components/tagList/cmp",
+      "h-add": "/components/add/cmp"
+  }
+}
